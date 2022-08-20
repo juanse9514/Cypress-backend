@@ -19,4 +19,13 @@ export class User {
     getPassword() { return this.password; }
     getPhone() { return this.phone; }
     getUserStatus() { return this.userStatus;}
+
+    setId(id) {  this.id=id; }
+    setUsername(username) {  this.username=username; }
+    setFirstName(firstName) {  this.firstName=firstName; }
+    setLastName(lastName) {  this.lastName=lastName; }
+    setEmail(email) {  this.email=email; }
+    setPassword(password) {  this.password=password; }
+    setPhone(phone) {  this.phone=phone; }
+    setUserStatus(userStatus) {  this.userStatus=userStatus;}
 }
