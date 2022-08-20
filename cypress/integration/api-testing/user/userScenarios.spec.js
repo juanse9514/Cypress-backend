@@ -1,7 +1,9 @@
 /// <reference types="cypress" />
 import { User } from '../../../utils/user.js';
 describe('Testscases for users', () => {
+
   const user = new User();
+
   context('Verify a user is created correctly', () => {
 
     it('Create a user', () => {
@@ -147,6 +149,35 @@ describe('Testscases for users', () => {
       
   })
 
+  context('Verify multiple users can be created at once', () => {
+
+    const users = Array(Math.floor(Math.random() * 5)).fill(new User());
+
+    it('Create multiple users', () => {
+      cy.request({
+        method: 'POST',
+        url: "/user/createWithList",
+        body:users
+      }).then(response => {
+        let body = JSON.parse(JSON.stringify(response.body))
+        expect(response.status).to.equal(200)
+        body.map(function (user,index) {
+          cy.userChecks(user,users[index])
+        })
+        
+        	
+      })
+    })
+
+    it('Verify the users exists', () => {
+
+      users.map(function (user) {
+        cy.getUser(user)
+      })
+    })
+
+      
+  })
 
 })
   
