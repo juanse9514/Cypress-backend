@@ -35,7 +35,11 @@ Once you installed node.js in your machine, you must install cypress by using th
 ```
 npm install
 ```
-Now, you can open cypress by typing the following command:
+Now, you can run all the tests by typing the following command:
 ```
-npx cypress open
+npm run test
+```
+in case you want to open the cypress UI, you should run the following command:\
+```
+npm run test
 ```
