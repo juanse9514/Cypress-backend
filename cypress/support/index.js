@@ -16,6 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './userCommands'
 import './petCommands'
+import './orderCommands'
 
 
 // Alternatively you can use CommonJS syntax:

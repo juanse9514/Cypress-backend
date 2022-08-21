@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-// creates an pet in the petstore api
+// creates a pet in the petstore api
 Cypress.Commands.add('createPet', (pet) => {
     cy.request({
         method: 'POST',
@@ -15,7 +15,7 @@ Cypress.Commands.add('createPet', (pet) => {
   
     })
 })
-
+// gets a pet in the petstore api and check the response
 Cypress.Commands.add('getPet', (pet) => {
     cy.request({
         method: 'GET',
@@ -30,7 +30,7 @@ Cypress.Commands.add('getPet', (pet) => {
   
     })
 })
-
+// checks the basic pet fields
 Cypress.Commands.add('petChecks', (body,pet) => {
 
     expect(body).has.property("id",pet.getId())

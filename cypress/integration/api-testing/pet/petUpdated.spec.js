@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import { Pet } from '../../../utils/pet.js';
 
-describe('Test cases for update a pet feature', () => {
+describe('Test cases for update a pet', () => {
     const pet = new Pet();
 
     context('Verify a pet can be updated', () => {
