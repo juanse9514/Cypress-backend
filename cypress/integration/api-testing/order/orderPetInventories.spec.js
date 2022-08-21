@@ -2,7 +2,7 @@
 import { Order } from '../../../utils/order.js';
 import { Pet } from '../../../utils/pet.js';
 
-describe('Test cases to create an order', () => {
+describe('Test cases to verify the inventory behavior', () => {
     
     const pet = new Pet();
     const order = new Order(pet.getId());
