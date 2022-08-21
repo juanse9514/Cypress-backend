@@ -164,6 +164,58 @@ describe('Testscases for pets endpoints', () => {
         })
           
     })
+
+    context('Find pets by status', () => {
+        
+        let response;
+        it('Find all the pets by status: '+pet.getStatus(), () => {
+            cy.request({
+                method: 'GET',
+                url: '/pet/findByStatus?status='+pet.getStatus()
+            }).then((apiResponse) => {
+                response=apiResponse
+            })
+        })
+    
+        it('Validate the pets match the same status as requested', () => {
+            let body = JSON.parse(JSON.stringify(response.body))
+            body.map(function (petResponse){
+                expect(petResponse.status).to.equal(pet.getStatus())
+            })
+        })
+          
+    })
+
+    context('Find pets by tag', () => {
+        let response;
+        let tag = pet.getTags()[0].name
+        it('Find all the pets by status: '+pet.getStatus(), () => {
+            cy.request({
+                method: 'GET',
+                url: '/pet/findByTags?tags='+tag
+            }).then((apiResponse) => {
+                response=apiResponse
+            })
+        })
+    
+        it('Validate the pets match the same tag as the requested one', () => {
+            let body = JSON.parse(JSON.stringify(response.body))
+            const responseTags = body.map(function (petResponse){
+                return petResponse.tags
+            })
+            let onlyTags = responseTags.map(responseTags =>{
+                return responseTags.map(responseTag=>{
+                    return responseTag.name
+                })
+            })
+            cy.log(responseTags[0]) 
+            onlyTags.map(tags =>{
+                expect(tags).to.contain(tag)
+            })
+            
+        })
+          
+    })
     
 })
   
