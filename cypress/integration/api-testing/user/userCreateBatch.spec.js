@@ -17,7 +17,6 @@ describe('Test cases to create multiple users', () => {
         body.map(function (user,index) {
           cy.userChecks(user,users[index])
         })
-        
         	
       })
     })

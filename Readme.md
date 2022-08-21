@@ -20,12 +20,24 @@ Folder structure for the automation framework document:
 
 ```
 home-challenge/       # Root directory.
-|- cypress/           # Folder used to store builded (output) files.
-|- node_modules/      # Markdowns files; one for each chapter.
-|- cypress.json       # Images folder.
+|- node_modules/      # Generated after installing all the modules necessaries.
+|- cypress.json       # Contains the sypress configurations.
 |- package-lock.json  # Metadata content (title, author...).
-|- package.json       # Makefile used for building our documents.
+|- package.json       # Contains all the dependencies.
 |- Readme.md          # Makefile Readme, contains useful information about the project.
+|- cypress/           # Folder that contains all the tests.
+|-- downloads         # Folder that contains all the downloaded files.
+|-- fixtures          # Contains all the attachment files.
+|-- integration       # Contains all the test case structure.
+|--- api-testing      # Contains all the test cases classified by epic.
+|---- order           # Contains all the test cases for the "order" features.
+|---- pet             # Contains all the test cases for the "pet" features.
+|---- user            # Contains all the test cases for the "user" features.
+|-- support           # Contains all the commands that can be used in the tests.
+|--- */Commands       # Contains all the shared commands, these can be used in the tests.
+|-- utils             # Contains all the classes used in the test cases.
+|-- video             # Contain the evidence collected after every execution.
+
 ```
 
 ### Running Cypress
@@ -39,7 +51,7 @@ Now, you can run all the tests by typing the following command:
 ```
 npm run test
 ```
-in case you want to open the cypress UI, you should run the following command:\
+in case you want to open the cypress UI, you should run the following command:
 ```
-npm run test
+npx cypress open
 ```
