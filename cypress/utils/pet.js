@@ -1,15 +1,17 @@
+
 import { faker } from '@faker-js/faker';
 
+const status = ["available","pending","sold"]
 export class Pet {
     constructor() {
         this.id = Math.floor(Math.random() * 100000),
         this.name = "Dog "+faker.name.middleName(),
         this.photoUrls = [faker.image.animals()],
         this.tags = [{
-            id:Math.floor(Math.random() * 10),
+            id:Math.floor(Math.random() * 3),
             name:faker.animal.dog()
         }],
-        this.status = "available"
+        this.status = status[Math.floor(Math.random() * 3)]
     }
 
     getId() { return this.id; }
