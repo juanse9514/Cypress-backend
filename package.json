@@ -4,7 +4,7 @@
   "description": "home challenge solution for yellowpepper",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run"
   },
   "author": "",
   "license": "ISC",
@@ -12,4 +12,5 @@
     "@faker-js/faker": "^7.4.0",
     "cypress": "^9.7.0"
   }
+
 }
