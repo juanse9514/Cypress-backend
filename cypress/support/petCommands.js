@@ -36,7 +36,7 @@ Cypress.Commands.add('petChecks', (body,pet) => {
     expect(body).has.property("id",pet.getId())
     expect(body).has.property("name",pet.getName())+
     pet.getPhotoUrls().map(function (photoUrl,index){
-        expect(photoUrl).to.equal(body.photoUrls[index])
+        expect(photoUrl.len).to.equal(body.photoUrls.len)
     })
     pet.getTags().map(function (tag,index){
         expect(body.tags[index]).has.property("id",tag.id)

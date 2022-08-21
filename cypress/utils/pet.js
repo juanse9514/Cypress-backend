@@ -26,4 +26,7 @@ export class Pet {
     setTags(tags) {this.tags=tags}
     setStatus(status) {this.status=status}
     
+    addphotoUrl(photoUrl){this.photoUrls.push(photoUrl)}
+    addTag(tag){this.tags.push(tag)}
+    
 }
