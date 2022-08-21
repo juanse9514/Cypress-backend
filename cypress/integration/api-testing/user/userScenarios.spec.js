@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import { User } from '../../../utils/user.js';
-describe('Testscases for users', () => {
+describe('Testscases for user endpoints', () => {
 
   const user = new User();
 
@@ -12,28 +12,9 @@ describe('Testscases for users', () => {
 
     it('Validate the user was created correctly', () => {
 
-      cy.request({
-        method: 'GET',
-        url: "/user/"+user.getUsername(),
-        headers: { 
-          accept: 'application/json'
-        }
-      }).then(response => {
-        let body = JSON.parse(JSON.stringify(response.body))
-        cy.log(body)
-        expect(response.status).to.equal(200)
-        expect(body).has.property("id",user.getId())
-        expect(body).has.property("username",user.getUsername())
-        expect(body).has.property("firstName",user.getFirstName())
-        expect(body).has.property("lastName",user.getLastName())
-        expect(body).has.property("email",user.getEmail())
-        expect(body).has.property("password")
-        expect(body).has.property("phone",user.getPhone())
-        expect(body).has.property("userStatus",user.getUserStatus())
+      cy.getUser(user)
 
-      })
     })
-      
   })
 
   context('Verify a user can login and log out correctly', () => {
