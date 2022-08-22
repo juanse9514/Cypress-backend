@@ -55,3 +55,9 @@ in case you want to open the cypress UI, you should run the following command:
 ```
 npx cypress open
 ```
+
+
+## Explaination
+This test framework was developed using cypress due to the possibilities of including in the short term front end tests, as you may know, with cypress you have the ability to build a framework to test APIs and front-end applications, this could be seen as an advantage if you want to centralize your tests by using the same tool for both test types.
+
+In this home-Challenge I gave a priority for each test case designed [home-challenge-test-case](https://1drv.ms/x/s!ApWt2MCOuV1sibVx0NQhctZokpyMDQ?e=Zjk8a6), the tests are designed according to the cases that can commonly arise during the use of the application in production, with this test suit, you can identify if some endpoint/scenario is failing since all endpoints are being tested by at least one happy path scenario, i took this approach due the given resources (time, qa automation guys) hbut anyways this framework can be improved by adding test cases with invalid data or aplying other test design strategies if you had more information about the requirements.

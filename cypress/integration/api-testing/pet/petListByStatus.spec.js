@@ -7,6 +7,9 @@ describe('Test cases for list pets by status ', () => {
     context('Find pets by status', () => {
         
         let response;
+        it('Create a pet', () => {
+            cy.createPet(pet)
+        })
         it('Find all the pets by status: '+pet.getStatus(), () => {
             cy.request({
                 method: 'GET',
