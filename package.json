@@ -12,5 +12,4 @@
     "@faker-js/faker": "^7.4.0",
     "cypress": "^9.7.0"
   }
-
 }

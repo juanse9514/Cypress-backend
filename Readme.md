@@ -47,7 +47,7 @@ Once you installed node.js in your machine, you must install cypress by using th
 ```
 npm install
 ```
-Now, you can run all the tests by typing the following command:
+Now, if you want to run the tests, first, be sure you are runing the api in your "localhost:8080" as described in the [pet-store-api-readme](https://github.com/swagger-api/swagger-petstore/blob/master/README.md), then, you can run all the tests by typing the following command:
 ```
 npm run test
 ```
@@ -59,5 +59,13 @@ npx cypress open
 
 ## Explaination
 This test framework was developed using cypress due to the possibilities of including in the short term front end tests, as you may know, with cypress you have the ability to build a framework to test APIs and front-end applications, this could be seen as an advantage if you want to centralize your tests by using the same tool for both test types.
+
+Inside this framework you will find the tests, attachment files and classes used to successfully run all the tests, essentially, there are three clasess:
+
+- User.
+- Order.
+- Pet.
+
+Each class contains all the required information to create an object inside the pet-store-API. In case of future updates, you will need to modify this classes
 
 In this home-Challenge I gave a priority for each test case designed [home-challenge-test-case](https://1drv.ms/x/s!ApWt2MCOuV1sibVx0NQhctZokpyMDQ?e=Zjk8a6), the tests are designed according to the cases that can commonly arise during the use of the application in production, with this test suit, you can identify if some endpoint/scenario is failing since all endpoints are being tested by at least one happy path scenario, i took this approach due the given resources (time, qa automation guys) hbut anyways this framework can be improved by adding test cases with invalid data or aplying other test design strategies if you had more information about the requirements.
